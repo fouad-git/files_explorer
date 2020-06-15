@@ -39,8 +39,19 @@ $content=scandir($url);
 $display_files = [];
 foreach($content as $item){
 if($item !== "." && $item !== ".."){
-echo $item."<br />";*/
-}
+echo $item."<br />";
+}}*/
+//'REQUEST_URI'
+//L'URI qui a été fourni pour accéder à cette page. Par exemple : '/index.html'.
+//$_SERVER est un tableau contenant des informations comme les en-têtes, dossiers et chemins du script. Les entrées de ce tableau sont créées par le serveur web.
+//explode — Scinde une chaîne de caractères en segments
+//explode() retourne un tableau de chaînes de caractères, chacune d'elle étant une sous-chaîne du paramètre
+$url = getcwd();
+$content=scandir($url);
+$crumbs = explode('/',$content);
+var_dump($crumbs);
+foreach($crumbs as $crumb){
+    echo ucfirst(str_replace(array(".php","_"),array(""," "),$crumb) . ' ');
 }
 
 ?>
