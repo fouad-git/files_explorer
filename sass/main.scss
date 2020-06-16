@@ -1,1 +1,21 @@
 @import "import/layout";
+@import "import/mixins";
+
+
+.btmnavbar{
+   .cotgauche{
+       @include flexnav;
+       width: 40%;
+       color: white;
+   }
+   .cotdroit{
+    @include flexnav;
+    width: 15%;
+
+   }
+}
+.btmnavbar:hover {
+    background:rgba(0,0,0,0.65);
+    
+  }
+  
