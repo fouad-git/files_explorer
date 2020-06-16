@@ -1,57 +1,34 @@
-<?php
-/*Exercice _1.
-//function getcwd();retourne le dossier courant 
-$url = getcwd(); 
-var_dump($url) ;
-//scandir — Liste les fichiers et dossiers dans un dossier
-$content=scandir($url);
-var_dump($content);
-foreach($content as $item ){
-  var_dump($item);
-  }
-*/
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css"/>
+  <title>files_explorer</title>
+</head>
+<body>
+  <div class="bureau">
+
+  </div>
+  <div class="btmnavbar">
+<div class="cotgauche">
+
+<div><img src="medias/windows.png"/></div>
+<div><img src="medias/search.png"/></div>
+<div><img src="medias/folder.png"/></div>
+<div><img src="medias/google.png"/></div>
+<div><img src="medias/vscode.png"/></div>
+<div><img src="medias/photoshop.png"/></div>
+<div><img src="medias/ilustrator.png"/></div>
+</div>
+<div class="cotdroit">
+<div><img src="medias/folder.png"/></div>
+<div><img src="medias/folder.png"/></div>
+<div><img src="medias/folder.png"/></div>
+</div>
+  </div>
+
+</body>
+</html>
 
 
-
-/*Exercice 2
-//repertoire actuel
-//is_dir — Indique si le fichier est un dossier
-
-$home="home";
-if( !is_dir($home)){
-mkdir('home');
-}
-//chdir — Change de dossier
-//chdir() change le dossier courant de PHP en directory.
-chdir(getcwd() . DIRECTORY_SEPARATOR . $home);
-$url = getcwd();
-$content=scandir($url);
-// print_r($content)
-foreach($content as $item) {
-echo $item."<br />";
-}*/
-
-
-
-/*Exercice 3
-$url = getcwd();
-$content=scandir($url);
-$display_files = [];
-foreach($content as $item){
-if($item !== "." && $item !== ".."){
-echo $item."<br />";
-}}*/
-//'REQUEST_URI'
-//L'URI qui a été fourni pour accéder à cette page. Par exemple : '/index.html'.
-//$_SERVER est un tableau contenant des informations comme les en-têtes, dossiers et chemins du script. Les entrées de ce tableau sont créées par le serveur web.
-//explode — Scinde une chaîne de caractères en segments
-//explode() retourne un tableau de chaînes de caractères, chacune d'elle étant une sous-chaîne du paramètre
-$url = getcwd();
-$content=scandir($url);
-$crumbs = explode('/',$content);
-var_dump($crumbs);
-foreach($crumbs as $crumb){
-    echo ucfirst(str_replace(array(".php","_"),array(""," "),$crumb) . ' ');
-}
-
-?>
